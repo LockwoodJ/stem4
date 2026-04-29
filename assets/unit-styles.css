@@ -347,3 +347,126 @@ footer{padding:28px 24px;color:var(--muted);text-align:center;font-size:.9rem}
 .fablab-status span{color:var(--muted);line-height:1.45}
 @media(max-width:1100px){.fablab-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.fablab-grid,.fablab-status-grid{grid-template-columns:1fr}}
+
+/* FabLab content pages */
+.fablab-step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.fablab-step {
+  background: rgba(255,255,255,.84);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 28px;
+  box-shadow: var(--soft);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.fablab-step::before {
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:6px;
+  background:linear-gradient(90deg,var(--green),var(--blue),var(--yellow));
+}
+.fablab-step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: linear-gradient(135deg,var(--blue),var(--blue2));
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+.fablab-step h3 {
+  color: var(--dark);
+  font-size: 1.2rem;
+  letter-spacing: -.03em;
+  margin-bottom: 10px;
+}
+.fablab-step p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+.faq-item {
+  background: rgba(255,255,255,.84);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 24px;
+  box-shadow: var(--soft);
+  padding: 22px;
+}
+.faq-item h3 {
+  color: var(--blue);
+  font-size: 1.15rem;
+  letter-spacing: -.03em;
+  margin-bottom: 8px;
+}
+.faq-item p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+.donation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.donation-card {
+  background: rgba(255,255,255,.84);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 28px;
+  box-shadow: var(--soft);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.donation-card::before {
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:6px;
+  background:linear-gradient(90deg,var(--green),var(--blue),var(--yellow));
+}
+.donation-card h3 {
+  color: var(--dark);
+  font-size: 1.2rem;
+  letter-spacing: -.03em;
+  margin-bottom: 10px;
+}
+.donation-card ul {
+  padding-left: 20px;
+  color: var(--muted);
+}
+.donation-card li {
+  margin: 8px 0;
+}
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.soft-badge {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(255,255,255,.9);
+  color: var(--blue);
+  font-weight: 900;
+  font-size: .85rem;
+  box-shadow: 0 8px 18px rgba(17,24,39,.04);
+}
+@media(max-width:920px){
+  .fablab-step-grid,
+  .donation-grid { grid-template-columns: 1fr; }
+}
