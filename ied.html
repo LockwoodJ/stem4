@@ -3,39 +3,43 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lockwood STEM | Introduction to Engineering Design</title>
+<title>IED | Lockwood STEM</title>
 
 <style>
 :root {
+  --blue: #003399;
+  --blue2: #0054c8;
+  --green: #33cc66;
+  --yellow: #ffcc00;
+  --light: #f5f5f5;
   --dark: #101827;
   --text: #1f2937;
   --muted: #667085;
-  --light: #f5f5f5;
   --white: #ffffff;
-
-  --ied-primary: #003399;
-  --ied-secondary: #0054c8;
-  --ied-accent: #33cc66;
-  --ied-yellow: #ffcc00;
-  --ied-soft: rgba(0, 51, 153, 0.13);
-
   --shadow: 0 24px 70px rgba(0, 51, 153, 0.16);
-  --soft-shadow: 0 14px 38px rgba(17, 24, 39, 0.08);
+  --soft: 0 14px 38px rgba(17, 24, 39, 0.08);
+  --radius: 28px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, var(--ied-soft), transparent 32%),
-    radial-gradient(circle at top right, rgba(51, 204, 102, 0.16), transparent 34%),
+    radial-gradient(circle at top left, rgba(51,204,102,.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(0,51,153,.18), transparent 34%),
     linear-gradient(180deg, #ffffff 0%, #f6f9ff 55%, var(--light) 100%);
-  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -43,87 +47,108 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0, 51, 153, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 51, 153, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(0,51,153,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,51,153,.04) 1px, transparent 1px);
   background-size: 44px 44px;
   pointer-events: none;
   z-index: -1;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent 80%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.75), transparent 80%);
 }
 
-.page {
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  padding: 18px 24px;
+}
+
+.nav {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,.86);
+  border-radius: 999px;
+  padding: 10px 14px 10px 18px;
+  box-shadow: var(--soft);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  color: var(--blue);
+  letter-spacing: -.03em;
+}
+
+.brand img {
+  height: 48px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 10px 22px rgba(0,51,153,.18));
+}
+
+.brand span {
+  font-size: 1.02rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  font-size: .9rem;
+  color: var(--dark);
+}
+
+.nav-links a {
+  padding: 10px 12px;
+  border-radius: 999px;
+  transition: .2s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  background: rgba(0,51,153,.08);
+  color: var(--blue);
+}
+
+.nav-links .submit-link {
+  background: linear-gradient(135deg, var(--green), #1f9f52);
+  color: #07111f;
+  box-shadow: 0 10px 22px rgba(51,204,102,.22);
 }
 
 .hero {
-  position: relative;
-  overflow: hidden;
-  border-radius: 36px;
-  padding: 42px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 52px 24px 34px;
+}
+
+.hero-shell {
+  border-radius: 42px;
+  padding: 44px;
   background:
-    linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,255,255,.55)),
-    radial-gradient(circle at 88% 18%, rgba(51,204,102,.24), transparent 28%),
-    radial-gradient(circle at 14% 18%, rgba(255,204,0,.18), transparent 24%);
-  border: 1px solid rgba(255,255,255,.9);
+    linear-gradient(135deg, rgba(255,255,255,.78), rgba(255,255,255,.42)),
+    radial-gradient(circle at 86% 14%, rgba(51,204,102,.18), transparent 26%),
+    radial-gradient(circle at 12% 18%, rgba(255,204,0,.18), transparent 24%);
+  border: 1px solid rgba(255,255,255,.86);
   box-shadow: var(--shadow);
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  right: -80px;
-  bottom: -110px;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(0,51,153,.12), rgba(51,204,102,.22));
-  border: 1px solid rgba(255,255,255,.5);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 760px;
-  padding-right: 120px;
-}
-
-.floating-logo-badge {
-  position: absolute;
-  top: 26px;
-  right: 30px;
-  z-index: 2;
-  width: 148px;
-  height: 148px;
-  padding: 12px;
-  border-radius: 34px;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,255,255,.78));
-  border: 1px solid rgba(255,255,255,.96);
-  box-shadow:
-    0 22px 54px rgba(0, 51, 153, 0.18),
-    0 0 0 8px rgba(0, 51, 153, 0.055);
+.hero-grid {
   display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.floating-logo-badge::after {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border-radius: 26px;
-  border: 1px solid rgba(0, 51, 153, 0.10);
-  pointer-events: none;
-}
-
-.floating-ied-logo {
-  width: 124px;
-  height: 124px;
-  object-fit: contain;
-  object-position: center;
-  display: block;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 42px;
+  align-items: center;
 }
 
 .eyebrow {
@@ -133,466 +158,502 @@ body::before {
   padding: 9px 15px;
   border-radius: 999px;
   background: rgba(255,255,255,.78);
-  border: 1px solid var(--ied-soft);
-  color: var(--ied-primary);
+  border: 1px solid rgba(51,204,102,.35);
+  color: #176b38;
   font-size: .88rem;
   font-weight: 900;
   box-shadow: 0 10px 26px rgba(17,24,39,.06);
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .spark {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--ied-accent);
-  box-shadow: 0 0 0 5px var(--ied-soft);
+  background: var(--yellow);
+  box-shadow: 0 0 0 5px rgba(255,204,0,.25);
 }
 
 h1 {
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-size: clamp(3rem, 7vw, 6.35rem);
   line-height: .92;
   letter-spacing: -.08em;
   color: var(--dark);
-  margin: 0 0 18px;
+  margin-bottom: 22px;
+  text-wrap: balance;
 }
 
-h1 span { color: var(--ied-primary); }
+h1 span {
+  color: var(--blue);
+}
 
 .subtitle {
+  font-size: clamp(1.08rem, 2vw, 1.28rem);
   color: var(--muted);
-  font-size: 1.16rem;
-  line-height: 1.55;
-  max-width: 780px;
-  margin: 0 0 26px;
+  max-width: 720px;
+  line-height: 1.6;
+  margin-bottom: 28px;
 }
 
-.hero-actions {
+.actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  text-decoration: none;
+  padding: 14px 20px;
   border-radius: 999px;
-  padding: 14px 18px;
   font-weight: 900;
-  color: var(--ied-primary);
-  background: rgba(255,255,255,.88);
-  box-shadow: var(--soft-shadow);
-  border: 1px solid rgba(255,255,255,.9);
-  transition: transform .2s ease, box-shadow .2s ease;
+  border: 2px solid transparent;
+  transition: .2s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 42px rgba(17,24,39,.12);
 }
 
-.btn.primary {
-  background: linear-gradient(135deg, var(--ied-primary), var(--ied-secondary));
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
   color: white;
+  box-shadow: 0 14px 30px rgba(0,51,153,.25);
 }
 
-.section { margin-top: 24px; }
-
-.section-title {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 16px;
-  margin: 0 0 14px;
+.btn-secondary {
+  background: white;
+  color: var(--blue);
+  border-color: rgba(0,51,153,.12);
+  box-shadow: 0 10px 24px rgba(17,24,39,.06);
 }
 
-.section-title h2 {
-  margin: 0;
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
-  color: var(--dark);
-  letter-spacing: -.05em;
-}
-
-.section-title p {
-  margin: 0;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.nav-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.card,
-.info-card {
-  background: rgba(255,255,255,.86);
-  backdrop-filter: blur(16px);
+.visual-panel {
+  width: min(420px, 100%);
+  margin-left: auto;
+  border-radius: 42px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.84), rgba(255,255,255,.5)),
+    radial-gradient(circle at 80% 18%, rgba(255,204,0,.24), transparent 34%),
+    radial-gradient(circle at 14% 90%, rgba(51,204,102,.18), transparent 35%);
   border: 1px solid rgba(255,255,255,.9);
-  border-radius: 28px;
-  box-shadow: var(--soft-shadow);
+  box-shadow: var(--shadow);
+  padding: 36px;
+  text-align: center;
+  position: relative;
   overflow: hidden;
 }
 
-.nav-card {
-  position: relative;
-  min-height: 250px;
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-decoration: none;
-  color: inherit;
-  transition: transform .2s ease, box-shadow .2s ease;
+.visual-panel img {
+  width: min(300px, 82%);
+  height: auto;
+  display: block;
+  margin: 0 auto 24px;
+  filter: drop-shadow(0 26px 46px rgba(0,51,153,.18));
+  animation: float 5.5s ease-in-out infinite;
 }
 
-.nav-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 54px rgba(17,24,39,.12);
-}
-
-.icon-badge {
-  width: 52px;
-  height: 52px;
-  border-radius: 18px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--ied-primary), var(--ied-secondary));
-  color: white;
+.visual-panel h2 {
+  color: var(--blue);
   font-size: 1.45rem;
-  box-shadow: 0 14px 30px rgba(0,51,153,.22);
-}
-
-.nav-card h3 {
-  margin: 18px 0 10px;
-  color: var(--dark);
-  font-size: 1.28rem;
   letter-spacing: -.04em;
+  margin-bottom: 8px;
 }
 
-.nav-card p {
-  margin: 0;
+.visual-panel p {
   color: var(--muted);
-  line-height: 1.45;
-  font-size: .96rem;
 }
 
-.card-link {
-  margin-top: 18px;
-  color: var(--ied-primary);
+.course-nav {
+  max-width: 1180px;
+  margin: -6px auto 0;
+  padding: 0 24px;
+  position: sticky;
+  top: 10px;
+  z-index: 20;
+}
+
+.course-nav-inner {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  border-radius: 999px;
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(255,255,255,.92);
+  box-shadow: var(--soft);
+  padding: 10px;
+}
+
+.course-nav a {
+  white-space: nowrap;
+  border-radius: 999px;
+  padding: 9px 13px;
+  font-size: .86rem;
   font-weight: 900;
+  color: var(--blue);
 }
 
-.content-grid {
+.course-nav a:hover {
+  background: rgba(0,51,153,.08);
+}
+
+section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 42px 24px;
+}
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.05;
+  letter-spacing: -.06em;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 76px;
+  height: 5px;
+  border-radius: 999px;
+  margin-top: 16px;
+  background: linear-gradient(90deg, var(--green), var(--yellow));
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.cards, .resource-grid {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card, .resource, .panel {
+  background: rgba(255,255,255,.84);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: var(--radius);
+  box-shadow: var(--soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.card, .resource {
+  padding: 24px;
+  transition: .22s ease;
+}
+
+.card::before::before, .resource::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--green), var(--blue), var(--yellow));
+}
+
+.card:hover:hover, .resource:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.card-tag {
+  display: inline-flex;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: .75rem;
+  font-weight: 900;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #7a5b00;
+  background: rgba(255,204,0,.25);
+  border: 1px solid rgba(255,204,0,.35);
+}
+
+.card h3 h3, .resource h3 {
+  font-size: 1.15rem;
+  color: var(--dark);
+  letter-spacing: -.03em;
+  margin-bottom: 8px;
+}
+
+.card p p, .resource p {
+  color: var(--muted);
+  font-size: .94rem;
+  line-height: 1.5;
+}
+
+
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.info-card-header {
-  padding: 16px 20px;
-  background: linear-gradient(135deg, var(--ied-primary), var(--ied-secondary));
-  color: white;
+.panel {
+  padding: 28px;
 }
 
-.info-card-header.green {
-  background: linear-gradient(135deg, var(--ied-accent), var(--ied-secondary));
-  color: #07111f;
-}
-
-.info-card-header h2,
-.info-card-header h3 {
-  margin: 0;
+.panel h3 {
+  font-size: 1.25rem;
+  color: var(--dark);
   letter-spacing: -.03em;
+  margin-bottom: 12px;
 }
 
-.info-card-body { padding: 22px; }
-
-.check-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 12px;
-}
-
-.check-list li {
-  display: grid;
-  grid-template-columns: 26px 1fr;
-  gap: 10px;
-  align-items: start;
-  color: var(--text);
-  line-height: 1.45;
-  font-weight: 700;
-}
-
-.check-list li::before {
-  content: "✓";
-  width: 24px;
-  height: 24px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  background: var(--ied-soft);
-  color: var(--ied-primary);
-  font-weight: 900;
-}
-
-.success-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
-}
-
-.success-card {
-  padding: 18px;
-  border-radius: 22px;
-  background: rgba(255,255,255,.86);
-  border: 1px solid rgba(255,255,255,.9);
-  box-shadow: 0 10px 28px rgba(17,24,39,.06);
-}
-
-.success-card strong {
-  display: block;
-  color: var(--ied-primary);
-  margin-bottom: 8px;
-  font-size: .95rem;
-}
-
-.success-card span {
+.panel ul {
+  padding-left: 20px;
   color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.4;
 }
 
-.footer-card {
-  margin-top: 24px;
-  padding: 24px;
-  border-radius: 28px;
-  background: linear-gradient(135deg, rgba(0,51,153,.95), rgba(0,84,200,.92));
+.panel li {
+  margin: 8px 0;
+}
+
+.callout {
+  max-width: 1180px;
+  margin: 20px auto 60px;
+  padding: 0 24px;
+}
+
+.callout-inner {
+  border-radius: 34px;
+  padding: 34px;
+  background:
+    radial-gradient(circle at 90% 15%, rgba(255,204,0,.24), transparent 26%),
+    radial-gradient(circle at 12% 90%, rgba(51,204,102,.18), transparent 30%),
+    linear-gradient(135deg, #001a4d, var(--blue));
   color: white;
   box-shadow: var(--shadow);
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
   align-items: center;
 }
 
-.footer-card h2 {
-  margin: 0 0 6px;
-  letter-spacing: -.04em;
+.callout-inner p {
+  color: rgba(255,255,255,.82);
+  margin-top: 8px;
 }
 
-.footer-card p {
-  margin: 0;
-  opacity: .88;
-  line-height: 1.4;
+footer {
+  padding: 28px 24px;
+  color: var(--muted);
+  text-align: center;
+  font-size: .9rem;
 }
 
-.footer-card .btn { flex: 0 0 auto; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-@media(max-width: 980px) {
-  .nav-grid,
-  .success-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .content-grid {
+@media(max-width: 920px) {
+  .hero-grid, .two-col, .callout-inner {
     grid-template-columns: 1fr;
   }
 
-  .footer-card {
-    align-items: flex-start;
-    flex-direction: column;
+  .visual-panel {
+    margin: 0;
+  }
+
+  .cards, .resource-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-@media(max-width: 640px) {
-  .page { padding: 14px; }
+@media(max-width: 680px) {
+  header {
+    padding: 14px;
+  }
+
+  .nav {
+    border-radius: 24px;
+  }
+
+  .nav-links {
+    display: none;
+  }
 
   .hero {
-    padding: 28px 22px;
-    border-radius: 28px;
+    padding: 28px 18px;
   }
 
-  .floating-logo-badge {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 122px;
-    height: 122px;
-    margin-bottom: 18px;
+  .hero-shell {
+    border-radius: 30px;
+    padding: 28px 20px;
   }
 
-  .floating-ied-logo {
-    width: 100px;
-    height: 100px;
+  .visual-panel {
+    border-radius: 30px;
+    padding: 28px 20px;
   }
 
-  .hero-content {
-    padding-right: 0;
-  }
-
-  .hero-actions,
-  .footer-card .btn,
-  .btn {
-    width: 100%;
-  }
-
-  .nav-grid,
-  .success-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-title {
-    align-items: flex-start;
-    flex-direction: column;
+  .brand img {
+    height: 44px;
   }
 }
+</style>
+<style id="lockwood-anchor-fix">
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 110px; }
 </style>
 </head>
 
 <body>
-  <main class="page">
-    <section class="hero">
-      <div class="floating-logo-badge">
-        <img src="assets/ied-logo.png" alt="Introduction to Engineering Design Logo" class="floating-ied-logo" />
-      </div>
+<header>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Lockwood STEM Home">
+      <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
+      <span>Lockwood STEM</span>
+    </a>
 
-      <div class="hero-content">
-        <div class="eyebrow"><span class="spark"></span> Lockwood STEM</div>
-        <h1>Introduction to Engineering Design <span>(IED)</span></h1>
-        <p class="subtitle">Welcome to IED. This course introduces students to the engineering design process through sketching, CAD modeling, prototyping, problem-solving, and hands-on design challenges.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="ied-units.html">Units</a>
-          <a class="btn" href="agenda.html">View Daily Agenda</a>
-        </div>
-      </div>
-    </section>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#resources">Resources</a>
+      <a href="resources.html">Resources</a>
+      <a href="fablab.html">FabLab</a>
+      <a class="submit-link" href="fabrication.html">Submit</a>
+    </div>
+  </nav>
+</header>
 
-    <section class="section">
-      <div class="section-title">
+<main>
+  <section class="hero">
+    <div class="hero-shell">
+      <div class="hero-grid">
         <div>
-          <h2>Course Navigation</h2>
-          <p>Use these links to quickly access the main parts of the course.</p>
-        </div>
-      </div>
-
-      <div class="nav-grid">
-        <a class="card nav-card" href="ied-units.html">
-          <div>
-            <div class="icon-badge">▧</div>
-            <h3>Units / Course Content</h3>
-            <p>Access lesson materials, notes, activities, and course content organized by unit.</p>
+          <div class="eyebrow"><span class="spark"></span> PLTW IED • Lockwood STEM</div>
+          <h1>Introduction to Engineering <span>Design</span></h1>
+          <p class="subtitle">Design process, sketching, CAD modeling, documentation, and engineering problem solving.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="ied-projects.html">View Projects</a>
+            <a class="btn btn-secondary" href="#resources">Resources</a>
           </div>
-          <div class="card-link">Go to Units →</div>
-        </a>
-
-        <a class="card nav-card" href="ied-projects.html">
-          <div>
-            <div class="icon-badge">✦</div>
-            <h3>Projects</h3>
-            <p>View major design challenges, project expectations, constraints, and grading criteria.</p>
-          </div>
-          <div class="card-link">Go to Projects →</div>
-        </a>
-
-        <a class="card nav-card" href="agenda.html">
-          <div>
-            <div class="icon-badge">◷</div>
-            <h3>Daily Agenda</h3>
-            <p>Check what we are doing each day, including objectives, homework, and announcements.</p>
-          </div>
-          <div class="card-link">View Agenda →</div>
-        </a>
-
-        <a class="card nav-card" href="ied-resources.html">
-          <div>
-            <div class="icon-badge">⌘</div>
-            <h3>Resources</h3>
-            <p>Access CAD tutorials, class notes, videos, reference materials, and support tools.</p>
-          </div>
-          <div class="card-link">Go to Resources →</div>
-        </a>
-      </div>
-    </section>
-
-    <section class="section content-grid">
-      <div class="info-card">
-        <div class="info-card-header">
-          <h2>What You’ll Do in This Course</h2>
         </div>
-        <div class="info-card-body">
-          <ul class="check-list">
-            <li>Learn and apply the engineering design process.</li>
-            <li>Develop technical sketching and visualization skills.</li>
-            <li>Create and modify designs using CAD software such as Fusion 360.</li>
-            <li>Build, test, and improve physical prototypes.</li>
-            <li>Work through real-world design challenges with clear constraints.</li>
-            <li>Document your work in a professional engineering notebook.</li>
-          </ul>
+
+        <div class="visual-panel">
+          <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
+          <h2>Design. Model. Document.</h2>
+          <p>Use this page to find IED projects, unit resources, and design expectations.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="info-card">
-        <div class="info-card-header green">
-          <h2>Start Strong</h2>
-        </div>
-        <div class="info-card-body">
-          <ul class="check-list">
-            <li>Check the daily agenda at the beginning of class.</li>
-            <li>Keep your engineering notebook organized and updated.</li>
-            <li>Save CAD files with clear names and versions.</li>
-            <li>Ask for feedback before your design is finished.</li>
-            <li>Use constraints as design tools, not obstacles.</li>
-          </ul>
-        </div>
+  <div class="course-nav">
+    <div class="course-nav-inner">
+      <a href="#projects">Projects</a>
+      <a href="#resources">Resources</a>
+      <a href="#expectations">Expectations</a>
+      <a href="fabrication.html">Submit</a>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="section-heading">
+      <h2>Projects</h2>
+      <p>IED projects focus on design thinking, visual communication, CAD modeling, documentation, testing, and improvement.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <span class="card-tag">Design Challenge</span>
+        <h3>Mini Golf Engineering Challenge</h3>
+        <p>Design a portable miniature golf hole that meets space, storage, and gameplay constraints.</p>
+      </article>
+
+      <article class="card">
+        <span class="card-tag">CAD + Testing</span>
+        <h3>Air Rocket Design Challenge</h3>
+        <p>Use CAD, tolerances, testing, and iteration to improve the performance of a rocket design.</p>
+      </article>
+
+      <article class="card">
+        <span class="card-tag">Product Design</span>
+        <h3>Product Improvement Project</h3>
+        <p>Analyze an existing product and redesign it to better meet user needs, constraints, and function.</p>
+      </article>
+    </div>
+  </section>
+  <section id="resources">
+    <div class="section-heading">
+      <h2>Resources</h2>
+      <p>Use these supports while working on sketches, CAD models, engineering notebooks, and project submissions.</p>
+    </div>
+
+    <div class="resource-grid">
+      <article class="resource">
+        <h3>Engineering Notebook</h3>
+        <p>Document sketches, decisions, testing, failures, improvements, and final reflection.</p>
+      </article>
+
+      <article class="resource">
+        <h3>CAD Resources</h3>
+        <p>Fusion Tutorials, Example CAD Models, Reference Sheets</p>
+      </article>
+
+      <a class="resource" href="fabrication.html">
+        <h3>Submit a 3D Print or Laser Cut</h3>
+        <p>Upload fabrication-ready files when your project is ready for review.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="expectations">
+    <div class="section-heading">
+      <h2>IED Expectations</h2>
+      <p>Strong engineering work shows the process, not just the final answer.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3>Before You Build</h3>
+        <ul>
+          <li>Define the problem clearly.</li>
+          <li>Identify criteria and constraints.</li>
+          <li>Create sketches before modeling.</li>
+          <li>Plan how your design will be tested.</li>
+        </ul>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="section-title">
-        <div>
-          <h2>How to Be Successful in IED</h2>
-          <p>Good engineers are organized, reflective, creative, and willing to improve their ideas.</p>
-        </div>
+      <div class="panel">
+        <h3>Before You Submit</h3>
+        <ul>
+          <li>Check file names and file types.</li>
+          <li>Include screenshots, sketches, or photos.</li>
+          <li>Explain what changed during revision.</li>
+          <li>Submit only when files are ready for review.</li>
+        </ul>
       </div>
+    </div>
+  </section>
 
-      <div class="success-grid">
-        <div class="success-card">
-          <strong>Stay Organized</strong>
-          <span>Keep files, sketches, notes, and project work easy to find.</span>
-        </div>
-        <div class="success-card">
-          <strong>Ask Early</strong>
-          <span>Get help before small problems become major setbacks.</span>
-        </div>
-        <div class="success-card">
-          <strong>Iterate Often</strong>
-          <span>Your first idea is rarely your final design. Improve it.</span>
-        </div>
-        <div class="success-card">
-          <strong>Document Clearly</strong>
-          <span>Show your thinking, decisions, evidence, and revisions.</span>
-        </div>
-        <div class="success-card">
-          <strong>Build With Purpose</strong>
-          <span>Every model, sketch, and prototype should solve a problem.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="footer-card">
+  <div class="callout">
+    <div class="callout-inner">
       <div>
-        <h2>Ready for today’s work?</h2>
-        <p>Start with the daily agenda, then move into the correct unit, project, or resource page.</p>
+        <h2>Ready to fabricate?</h2>
+        <p>Make sure your file is complete, named clearly, and ready for review before submitting.</p>
       </div>
-      <a class="btn" href="agenda.html">Open Daily Agenda</a>
-    </section>
-  </main>
+      <a class="btn btn-primary" style="background: var(--green); color: #07111f;" href="fabrication.html">Submit Project</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 Lockwood STEM
+</footer>
 </body>
 </html>
