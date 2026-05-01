@@ -888,3 +888,4 @@ footer{padding:28px 24px;color:var(--muted);text-align:center;font-size:.9rem}
   .project-grid-full { grid-template-columns: 1fr; }
   .unit-roadmap-card { grid-template-columns: 1fr; }
 }
+[id]{scroll-margin-top:110px}
