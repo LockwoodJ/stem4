@@ -69,18 +69,19 @@ body::before {
 }
 
 .page {
-  width: min(100vw, 1240px);
+  width: 100vw;
+  max-width: none;
   height: 100vh;
-  margin: 0 auto;
-  padding: 12px;
+  margin: 0;
+  padding: 6px;
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: 10px;
+  gap: 6px;
 }
 
 .hero {
-  border-radius: 22px;
-  padding: 14px 18px;
+  border-radius: 16px;
+  padding: 10px 14px;
   background:
     linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,255,255,.62)),
     radial-gradient(circle at 86% 14%, var(--course-soft), transparent 24%),
@@ -231,8 +232,8 @@ button.primary {
 .main-grid {
   min-height: 0;
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap: 10px;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 6px;
 }
 
 .card {
@@ -240,7 +241,7 @@ button.primary {
   background: rgba(255,255,255,.88);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255,255,255,.9);
-  border-radius: 20px;
+  border-radius: 14px;
   box-shadow: var(--soft);
   overflow: hidden;
   display: flex;
@@ -249,7 +250,7 @@ button.primary {
 
 .card-header {
   flex: 0 0 auto;
-  padding: 10px 14px;
+  padding: 8px 12px;
   background: linear-gradient(135deg, var(--course-primary), var(--course-secondary));
   color: white;
   display: flex;
@@ -290,7 +291,7 @@ button.primary {
 
 .card-body {
   min-height: 0;
-  padding: 12px;
+  padding: 8px;
   overflow: hidden;
 }
 
@@ -302,16 +303,16 @@ button.primary {
   min-height: 0;
   display: grid;
   grid-template-rows: auto auto auto 1fr auto;
-  gap: 7px;
+  gap: 5px;
 }
 
 .meta-row {
   min-height: 0;
   display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: 10px;
-  padding: 8px 10px;
-  border-radius: 13px;
+  grid-template-columns: 88px 1fr;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 10px;
   background: var(--course-soft);
   overflow: hidden;
 }
@@ -374,7 +375,7 @@ button.primary {
   min-height: 0;
   display: grid;
   grid-template-rows: .72fr 1fr 1fr .72fr;
-  gap: 10px;
+  gap: 6px;
 }
 
 .side-grid .card-body {
