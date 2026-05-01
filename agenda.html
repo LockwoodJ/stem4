@@ -371,11 +371,19 @@ button.primary {
 
 .agenda-list li { margin: 3px 0; }
 
+.left-stack,
 .side-grid {
   min-height: 0;
   display: grid;
-  grid-template-rows: .72fr 1fr 1fr .72fr;
   gap: 6px;
+}
+
+.left-stack {
+  grid-template-rows: auto 1fr;
+}
+
+.side-grid {
+  grid-template-rows: .8fr 1.15fr .8fr;
 }
 
 .side-grid .card-body {
@@ -680,34 +688,41 @@ function render() {
 
   els.app.className = "main-grid fade";
   els.app.innerHTML = `
-    <div class="card agenda-card">
-      <div class="card-header">
-        <h2>Class Agenda</h2>
-        <span>${escapeHTML(displayDate(agenda._date))}</span>
-      </div>
-      <div class="card-body">
-        <div class="meta-table">
-          <div class="meta-row">
-            <div class="meta-label">Course</div>
-            <div class="meta-value">${escapeHTML(courseName(currentCourse))}</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Unit</div>
-            <div class="meta-value">${safeText(agenda.Unit, "No unit listed.")}</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Lesson</div>
-            <div class="meta-value">${safeText(agenda["Lesson Title"], "No lesson listed.")}</div>
-          </div>
-          <div class="meta-row agenda-row">
-            <div class="meta-label">Agenda</div>
-            <div>${listify(agenda.Agenda)}</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Homework</div>
-            <div class="content-text">${safeText(agenda.Homework, "No homework listed.")}</div>
+    <div class="left-stack">
+      <div class="card agenda-card">
+        <div class="card-header">
+          <h2>Class Agenda</h2>
+          <span>${escapeHTML(displayDate(agenda._date))}</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-table">
+            <div class="meta-row">
+              <div class="meta-label">Course</div>
+              <div class="meta-value">${escapeHTML(courseName(currentCourse))}</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Unit</div>
+              <div class="meta-value">${safeText(agenda.Unit, "No unit listed.")}</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Lesson</div>
+              <div class="meta-value">${safeText(agenda["Lesson Title"], "No lesson listed.")}</div>
+            </div>
+            <div class="meta-row agenda-row">
+              <div class="meta-label">Agenda</div>
+              <div>${listify(agenda.Agenda)}</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Homework</div>
+              <div class="content-text">${safeText(agenda.Homework, "No homework listed.")}</div>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header yellow"><h3>Important Announcements</h3></div>
+        <div class="card-body">${listify(agenda["Important Announcements"])}</div>
       </div>
     </div>
 
@@ -722,11 +737,6 @@ function render() {
       <div class="card">
         <div class="card-header green"><h3>Objectives</h3></div>
         <div class="card-body">${listify(agenda.Objectives)}</div>
-      </div>
-
-      <div class="card">
-        <div class="card-header yellow"><h3>Important Announcements</h3></div>
-        <div class="card-body">${listify(agenda["Important Announcements"])}</div>
       </div>
 
       <div class="card">
