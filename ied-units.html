@@ -1,124 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IED Units | Lockwood STEM</title>
-<link rel="stylesheet" href="assets/unit-styles.css" />
-<style id="lockwood-anchor-fix">
-html { scroll-behavior: smooth; }
-[id] { scroll-margin-top: 110px; }
+
+<style>
+:root {
+  --primary: #003399;
+  --secondary: #0054c8;
+  --accent: #33cc66;
+  --soft: rgba(0, 51, 153, 0.12);
+  --text: #1f2937;
+  --muted: #667085;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #ffffff, #f6f9ff);
+  color: var(--text);
+}
+
+.page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+.hero {
+  position: relative;
+  padding: 40px;
+  border-radius: 32px;
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 24px 70px rgba(0,51,153,0.15);
+}
+
+.floating-logo {
+  position: absolute;
+  top: -30px;
+  right: 30px;
+  width: 140px;
+  height: 140px;
+  border-radius: 30px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0,51,153,0.2);
+}
+
+.floating-logo img {
+  width: 110px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.units-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.unit-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: 0.2s;
+}
+
+.unit-card:hover {
+  transform: translateY(-5px);
+}
+
+.unit-title {
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.unit-btn {
+  margin-top: 20px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+@media(max-width: 900px){
+  .units-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-logo {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 20px;
+  }
+}
 </style>
 </head>
+
 <body>
-<header>
-  <nav class="nav" aria-label="Main navigation">
-    <a class="brand" href="index.html" aria-label="Lockwood STEM Home">
-      <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
-      <span>Lockwood STEM</span>
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="ied.html">IED Home</a>
-      <a href="ied-units.html">Units</a>
-      <a href="ied-projects.html">Projects</a>
-      <a href="resources.html">Resources</a>
-      <a href="fablab.html">FabLab</a>
-      <a class="submit-link" href="fabrication.html">Submit</a>
-    </div>
-  </nav>
-</header>
-<main>
+
+<div class="page">
+
   <section class="hero">
-    <div class="hero-shell">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow"><span class="spark"></span> PLTW IED</div>
-          <h1>Unit <span>Home</span></h1>
-          <p class="subtitle">Use this page to open each IED unit, review unit resources, and connect your unit work to major projects.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#units">View Units</a>
-            <a class="btn btn-secondary" href="ied-projects.html">View Projects</a>
-          </div>
-        </div>
-        <div class="visual-panel">
-          <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
-          <h2>IED Roadmap</h2>
-          <p>Design and Problem Solving • Assembly Design • Thoughtful Product Design • Making Things Move</p>
-        </div>
-      </div>
+
+    <div class="floating-logo">
+      <img src="assets/ied-logo.png">
     </div>
+
+    <h1>IED Units</h1>
+    <p class="subtitle">Select a unit to access lessons, materials, and activities.</p>
+
   </section>
 
-  <section id="units">
-    <div class="section-heading">
-      <h2>PLTW IED Units</h2>
-      <p>Open a unit page for overview and workflow, or open the resource page for supports, checklists, and study materials.</p>
+  <div class="units-grid">
+
+    <div class="unit-card">
+      <div class="unit-title">Unit 1<br>Design and Problem Solving</div>
+      <a href="ied-unit-1.html" class="unit-btn">Go to Unit</a>
     </div>
-    <div class="unit-home-grid">
-      
-      <article class="unit-home-card">
-        <div class="unit-home-number">01</div>
-        <h3>Unit 1: Design and Problem Solving</h3>
-        <p>Define problems, identify constraints, generate ideas, test solutions, and communicate engineering decisions.</p>
-        <div class="resource-badge-row">
-          <span class="resource-badge">Problem Statement</span><span class="resource-badge">Criteria</span><span class="resource-badge">Constraints</span>
-        </div>
-        <div class="unit-home-actions">
-          <a class="mini-link" href="unit-1-design-and-problem-solving.html">Open Unit</a>
-          <a class="mini-link" href="unit-1-resources.html">Resources</a>
-          <a class="mini-link" href="mini-golf-project.html">Connected Project</a>
-        </div>
-      </article>
-    
 
-      <article class="unit-home-card">
-        <div class="unit-home-number">02</div>
-        <h3>Unit 2: Assembly Design</h3>
-        <p>Design systems made from multiple parts while focusing on fit, function, tolerances, and assembly relationships.</p>
-        <div class="resource-badge-row">
-          <span class="resource-badge">Parts</span><span class="resource-badge">Assemblies</span><span class="resource-badge">Constraints</span>
-        </div>
-        <div class="unit-home-actions">
-          <a class="mini-link" href="unit-2-assembly-design.html">Open Unit</a>
-          <a class="mini-link" href="unit-2-resources.html">Resources</a>
-          <a class="mini-link" href="air-rocket-project.html">Connected Project</a>
-        </div>
-      </article>
-    
-
-      <article class="unit-home-card">
-        <div class="unit-home-number">03</div>
-        <h3>Unit 3: Thoughtful Product Design</h3>
-        <p>Use user-centered design to analyze existing products and create purposeful improvements.</p>
-        <div class="resource-badge-row">
-          <span class="resource-badge">User Needs</span><span class="resource-badge">Research</span><span class="resource-badge">Analysis</span>
-        </div>
-        <div class="unit-home-actions">
-          <a class="mini-link" href="unit-3-thoughtful-product-design.html">Open Unit</a>
-          <a class="mini-link" href="unit-3-resources.html">Resources</a>
-          <a class="mini-link" href="product-improvement-project.html">Connected Project</a>
-        </div>
-      </article>
-    
-
-      <article class="unit-home-card">
-        <div class="unit-home-number">04</div>
-        <h3>Unit 4: Making Things Move</h3>
-        <p>Explore mechanisms and motion by designing systems that transform input motion into controlled output motion.</p>
-        <div class="resource-badge-row">
-          <span class="resource-badge">Cams</span><span class="resource-badge">Gears</span><span class="resource-badge">Linkages</span>
-        </div>
-        <div class="unit-home-actions">
-          <a class="mini-link" href="unit-4-making-things-move.html">Open Unit</a>
-          <a class="mini-link" href="unit-4-resources.html">Resources</a>
-          <a class="mini-link" href="unit-4-making-things-move.html#project">Connected Project</a>
-        </div>
-      </article>
-    
+    <div class="unit-card">
+      <div class="unit-title">Unit 2<br>Assembly Design</div>
+      <a href="ied-unit-2.html" class="unit-btn">Go to Unit</a>
     </div>
-  </section>
-</main>
-<footer>© 2026 Lockwood STEM</footer>
+
+    <div class="unit-card">
+      <div class="unit-title">Unit 3<br>Thoughtful Product Design</div>
+      <a href="ied-unit-3.html" class="unit-btn">Go to Unit</a>
+    </div>
+
+    <div class="unit-card">
+      <div class="unit-title">Unit 4<br>Making Things Move</div>
+      <a href="ied-unit-4.html" class="unit-btn">Go to Unit</a>
+    </div>
+
+  </div>
+
+</div>
+
 </body>
 </html>
