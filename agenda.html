@@ -446,6 +446,7 @@ button.primary {
   .meta-row { grid-template-columns: 1fr; }
 }
 </style>
+
 <style id="lockwood-anchor-fix">
 html { scroll-behavior: smooth; }
 [id] { scroll-margin-top: 110px; }
@@ -600,7 +601,11 @@ function displayDate(iso) {
 }
 
 function todayISO() {
-  return new Date().toISOString().slice(0, 10);
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, "0");
+  const dd = String(today.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
 }
 
 function clean(value) {
@@ -664,8 +669,9 @@ function shiftDate(direction) {
   const index = dates.indexOf(currentDate);
 
   if (index === -1) {
-    const nearest = nearestAgenda();
-    if (nearest) currentDate = nearest._date;
+    const current = new Date(currentDate + "T12:00:00");
+    current.setDate(current.getDate() + direction);
+    currentDate = current.toISOString().slice(0, 10);
   } else {
     const nextIndex = Math.min(Math.max(index + direction, 0), dates.length - 1);
     currentDate = dates[nextIndex];
@@ -788,8 +794,7 @@ async function loadAgendaForCourse(course) {
       return obj;
     }).filter(r => r._date).sort((a, b) => a._date.localeCompare(b._date));
 
-    const initial = nearestAgenda();
-    currentDate = initial ? initial._date : todayISO();
+    currentDate = todayISO();
     els.datePicker.value = currentDate;
 
     render();
