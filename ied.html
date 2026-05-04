@@ -509,28 +509,33 @@ footer {
 html { scroll-behavior: smooth; }
 [id] { scroll-margin-top: 110px; }
 </style>
+
+<link rel="stylesheet" href="assets/lockwood-polish.css">
 </head>
 
 <body>
-<header>
-  <nav class="nav" aria-label="Main navigation">
-    <a class="brand" href="index.html" aria-label="Lockwood STEM Home">
-      <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
+<header class="ls-global-header">
+  <nav class="ls-global-nav" aria-label="Main navigation">
+    <a class="ls-global-brand" href="index.html" aria-label="Lockwood STEM Home">
+      <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo">
       <span>Lockwood STEM</span>
     </a>
-
-    <div class="nav-links">
+    <div class="ls-global-links">
       <a href="index.html">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#resources">Resources</a>
-      <a href="resources.html">Resources</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="courses.html">Courses</a>
+      <a href="ied.html">IED</a>
+      <a href="poe.html">POE</a>
+      <a href="adm.html">Advanced Manufacturing</a>
       <a href="fablab.html">FabLab</a>
-      <a class="submit-link" href="fabrication.html">Submit</a>
+      <a href="resources.html">Resources</a>
+      <a class="ls-global-cta" href="fabrication.html">Fabrication</a>
     </div>
   </nav>
 </header>
 
 <main>
+<div class="ls-course-jump"><strong>IED Quick Links:</strong><a href="ied-syllabus.html">Syllabus</a><a href="ied-units.html">Units</a><a href="ied-projects.html">Projects</a><a href="cad-resources.html">CAD Resources</a><a href="fabrication.html">Fabrication Request</a></div>
   <section class="hero">
     <div class="hero-shell">
       <div class="hero-grid">
@@ -654,6 +659,15 @@ html { scroll-behavior: smooth; }
 
 <footer>
   © 2026 Lockwood STEM
+</footer>
+<footer class="ls-global-footer">
+  <strong>Lockwood STEM</strong> | Engineering • Manufacturing • Innovation
+  <div class="ls-footer-links">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="fablab.html">FabLab</a>
+    <a href="fabrication.html">Fabrication Request</a>
+  </div>
 </footer>
 </body>
 </html>
