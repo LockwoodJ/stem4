@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLTW IED Syllabus | Lockwood STEM</title>
+  <style>
+    :root {
+      --blue: #003399;
+      --green: #33cc66;
+      --yellow: #ffcc00;
+      --neutral: #f5f5f5;
+      --ink: #172033;
+      --muted: #5d6b82;
+      --white: #ffffff;
+      --border: #dfe7f1;
+      --shadow: 0 18px 45px rgba(0, 51, 153, 0.14);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(51, 204, 102, 0.13), transparent 34%),
+        radial-gradient(circle at top right, rgba(255, 204, 0, 0.2), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--blue), #001d66);
+      color: var(--white);
+      border-radius: 30px;
+      padding: 42px 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -80px -110px auto;
+      width: 310px;
+      height: 310px;
+      background: rgba(51, 204, 102, 0.23);
+      border-radius: 999px;
+    }
+
+    .hero::after {
+      content: "IED";
+      position: absolute;
+      right: 28px;
+      top: 16px;
+      font-size: clamp(70px, 12vw, 150px);
+      font-weight: 900;
+      letter-spacing: -8px;
+      color: rgba(255, 255, 255, 0.08);
+      line-height: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow span {
+      width: 10px;
+      height: 10px;
+      background: var(--green);
+      border-radius: 999px;
+      box-shadow: 0 0 0 5px rgba(51, 204, 102, 0.18);
+    }
+
+    .hero h1 {
+      position: relative;
+      margin: 22px 0 10px;
+      max-width: 850px;
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .hero .subtitle {
+      position: relative;
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      color: rgba(255, 255, 255, 0.87);
+    }
+
+    .hero-meta {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .meta-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 18px;
+      padding: 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .meta-card strong {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: rgba(255, 255, 255, 0.68);
+      margin-bottom: 4px;
+    }
+
+    .meta-card span {
+      font-weight: 800;
+    }
+
+    .section {
+      margin-top: 24px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 10px 26px rgba(23, 32, 51, 0.06);
+    }
+
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      color: var(--blue);
+      letter-spacing: -0.03em;
+    }
+
+    .section p {
+      margin: 0 0 14px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin: 0;
+    }
+
+    .unit-card {
+      border-top: 6px solid var(--green);
+    }
+
+    .unit-card:nth-child(2) {
+      border-top-color: var(--yellow);
+    }
+
+    .unit-card:nth-child(3) {
+      border-top-color: var(--blue);
+    }
+
+    .unit-card:nth-child(4) {
+      border-top-color: #79a9ff;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, rgba(51, 204, 102, 0.11), rgba(255, 204, 0, 0.14));
+      border: 1px solid rgba(51, 204, 102, 0.28);
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .badge-list li {
+      background: var(--neutral);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .project-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 15px;
+      background: #ffffff;
+    }
+
+    .project-icon {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 900;
+    }
+
+    .project-item strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--ink);
+    }
+
+    .project-item span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .policy-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-top: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .policy-table th,
+    .policy-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .policy-table th {
+      background: var(--blue);
+      color: var(--white);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .policy-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .policy-table td:first-child {
+      font-weight: 800;
+      color: var(--blue);
+    }
+
+    .callout {
+      border-left: 7px solid var(--green);
+      background: #f7fff9;
+      border-radius: 16px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .callout.warning {
+      border-left-color: var(--yellow);
+      background: #fffaf0;
+    }
+
+    .callout.blue {
+      border-left-color: var(--blue);
+      background: #f4f7ff;
+    }
+
+    .check-list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: white;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer strong {
+      color: var(--blue);
+    }
+
+    @media (max-width: 900px) {
+      .hero-meta,
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 34px 24px;
+      }
+
+      .section {
+        padding: 24px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .page-wrap {
+        max-width: none;
+        padding: 0;
+      }
+
+      .hero,
+      .section {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-wrap">
+    <header class="hero">
+      <div class="eyebrow"><span></span> Lockwood STEM | PLTW Engineering</div>
+      <h1>Introduction to Engineering Design</h1>
+      <p class="subtitle">A full-year, project-based engineering course focused on design thinking, technical communication, CAD modeling, prototyping, testing, and iteration.</p>
+
+      <div class="hero-meta">
+        <div class="meta-card">
+          <strong>Instructor</strong>
+          <span>Jonathan Lockwood</span>
+        </div>
+        <div class="meta-card">
+          <strong>Email</strong>
+          <span>jlockwood@cornerstonecharter.com</span>
+        </div>
+        <div class="meta-card">
+          <strong>Course Level</strong>
+          <span>9th Grade | Full Year</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Course Description</h2>
+      <p>Introduction to Engineering Design (IED) introduces students to the engineering design process, technical sketching, measurement, computer-aided design, prototyping, and documentation. Students will solve real-world problems through structured design challenges, performance tasks, and collaborative engineering projects.</p>
+      <p>This course emphasizes creativity, problem-solving, communication, persistence, and responsible use of engineering tools and technology.</p>
+    </section>
+
+    <section class="section">
+      <h2>Course Schedule</h2>
+      <div class="grid-2">
+        <div class="card highlight">
+          <h3>Monday, Tuesday, Thursday, Friday</h3>
+          <p>50-minute class periods</p>
+        </div>
+        <div class="card highlight">
+          <h3>Wednesday</h3>
+          <p>40-minute class period</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Course Units</h2>
+      <p>The course is organized into four major units that build from foundational design skills to more advanced modeling, product development, and mechanical motion.</p>
+      <div class="grid-4">
+        <div class="card unit-card">
+          <h3>Unit 1</h3>
+          <p><strong>Design and Problem Solving</strong><br />Students learn the design process, engineering documentation, sketching, measurement, and problem-solving strategies.</p>
+        </div>
+        <div class="card unit-card">
+          <h3>Unit 2</h3>
+          <p><strong>Assembly Design</strong><br />Students develop CAD skills, create parts and assemblies, and explore how components fit and function together.</p>
+        </div>
+        <div class="card unit-card">
+          <h3>Unit 3</h3>
+          <p><strong>Thoughtful Product Design</strong><br />Students analyze user needs, improve products, and design with empathy, purpose, and usability in mind.</p>
+        </div>
+        <div class="card unit-card">
+          <h3>Unit 4</h3>
+          <p><strong>Making Things Move</strong><br />Students investigate motion, mechanisms, and mechanical systems through hands-on design and modeling.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Major Projects & Design Challenges</h2>
+      <p>Students will complete multiple signature design challenges that require planning, sketching, CAD modeling, testing, fabrication, documentation, and reflection.</p>
+      <div class="project-list">
+        <div class="project-item">
+          <div class="project-icon">1</div>
+          <div><strong>Mini Golf Engineering Challenge</strong><span>Students design and build a functional mini golf hole while applying the engineering design process.</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-icon">2</div>
+          <div><strong>Air Rocket Design Challenge</strong><span>Students model, fabricate, and test rocket components while exploring fit, tolerance, performance, and iteration.</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-icon">3</div>
+          <div><strong>Product Improvement / Reverse Engineering</strong><span>Students analyze existing products and propose thoughtful improvements based on user needs and function.</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-icon">4</div>
+          <div><strong>Automata / Making Things Move Project</strong><span>Students design mechanical motion systems and communicate how mechanisms create controlled movement.</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-icon">5</div>
+          <div><strong>Make:able Assistive Device Design Challenge</strong><span>Students apply human-centered design to create assistive solutions for real-world users.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Course Tools & Technology</h2>
+      <p>Students will use industry-relevant tools and classroom systems throughout the course.</p>
+      <ul class="badge-list">
+        <li>Fusion 360</li>
+        <li>Engineering Notebook</li>
+        <li>Google Classroom / Canvas</li>
+        <li>3D Printers</li>
+        <li>Laser Cutter</li>
+        <li>Hand Tools</li>
+        <li>Measuring Tools</li>
+        <li>Calipers</li>
+        <li>PLTW LMS / myPLTW</li>
+        <li>Lockwood STEM Website</li>
+        <li>FabLab Request System</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Required Materials</h2>
+      <div class="grid-3">
+        <div class="card"><h3>#2 Pencils</h3><p>Used for sketching, documentation, planning, and daily work.</p></div>
+        <div class="card"><h3>Large Erasers</h3><p>Engineering design involves revision, iteration, and improvement.</p></div>
+        <div class="card"><h3>Ruler</h3><p>Used for sketching, dimensioning, and measurement practice.</p></div>
+        <div class="card"><h3>Digital or Dial Calipers</h3><p>Used for precision measurement during modeling and fabrication tasks.</p></div>
+        <div class="card"><h3>Calculator</h3><p>Optional, but helpful for calculations, measurement work, and design analysis.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Grading Policy</h2>
+      <p>Grades are based on a <strong>total points system</strong>. Larger assignments, design challenges, and performance tasks naturally carry more weight because they are worth more points.</p>
+      <ul class="badge-list">
+        <li>Classwork</li>
+        <li>Quizzes</li>
+        <li>Tests</li>
+        <li>Design Challenges</li>
+        <li>Performance Tasks</li>
+        <li>PLTW EOC Exam</li>
+      </ul>
+
+      <table class="policy-table" aria-label="Grading Scale">
+        <thead>
+          <tr>
+            <th>Letter Grade</th>
+            <th>Percentage Range</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>90–100</td></tr>
+          <tr><td>B</td><td>80–89</td></tr>
+          <tr><td>C</td><td>70–79</td></tr>
+          <tr><td>D</td><td>60–69</td></tr>
+          <tr><td>F</td><td>Below 60</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>PLTW End-of-Course Exam</h2>
+      <div class="callout blue">
+        <p>Students will complete the official <strong>PLTW End-of-Course (EOC) Exam</strong> at the conclusion of the course. The EOC Exam will count as <strong>100 points</strong> toward the final course grade.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Late Work, Revisions & Make-Up Work</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Late Work</h3>
+          <p>Assignments submitted late will receive a <strong>10% deduction for each day late</strong>.</p>
+        </div>
+        <div class="card">
+          <h3>Revisions</h3>
+          <p>Tests and quizzes may not be revised. Classwork, design challenges, and performance tasks may be revised for additional credit.</p>
+        </div>
+        <div class="card">
+          <h3>Absences</h3>
+          <p>Students receive <strong>one class period</strong> to make up work for each class period missed.</p>
+        </div>
+      </div>
+      <div class="callout warning">
+        <p>To be eligible for full credit through revision, the original submission must be turned in on time. Late initial submissions may still be accepted, but they are not eligible to earn full credit through revision.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Classroom Expectations</h2>
+      <ul class="check-list">
+        <li>Be prepared and ready to work each day.</li>
+        <li>Participate actively in classroom activities, projects, and discussions.</li>
+        <li>Collaborate respectfully with peers.</li>
+        <li>Follow directions and stay on task.</li>
+        <li>Take responsibility for your learning, materials, and progress.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Academic Integrity & Engineering Ethics</h2>
+      <p>All student work must represent original effort and authentic design thinking. Engineering work depends on honesty, documentation, and the ability to explain how and why a solution was created.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Original Engineering Work</h3>
+          <p>Students must create their own sketches, models, CAD files, documentation, and design explanations. Copying another student’s work or submitting work that is not your own is not permitted.</p>
+        </div>
+        <div class="card">
+          <h3>CAD Integrity</h3>
+          <p>Students must be able to explain their design choices, modeling steps, measurements, and final submitted files. Outside inspiration must be credited appropriately.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p><strong>AI Use Policy:</strong> AI tools may be used for brainstorming, idea generation, and research support. AI may not be used to generate complete solutions, complete designs, final CAD work, or submitted responses. Students are responsible for understanding and explaining all work they submit.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Course Philosophy</h2>
+      <p>This course is designed to feel like an introduction to real engineering practice. Students will be challenged to think critically, work collaboratively, document carefully, and improve through feedback.</p>
+      <p>Success in this course is not based only on getting the “right answer.” Students are expected to apply the design process, learn from failure, revise their work, and communicate ideas clearly.</p>
+    </section>
+
+    <footer class="footer">
+      <p><strong>Lockwood STEM</strong> | Introduction to Engineering Design | Cornerstone Charter Academy</p>
+    </footer>
+  </main>
+</body>
+</html>
