@@ -171,6 +171,30 @@ textarea{resize:vertical;min-height:100px;line-height:1.55}
 .status-msg.success{background:rgba(51,204,102,.15);color:#176b38;border:1.5px solid rgba(51,204,102,.3)}
 .status-msg.error{background:rgba(204,51,0,.1);color:#8b1a00;border:1.5px solid rgba(204,51,0,.2)}
 
+
+/* Live FabLab tracker */
+.tracker-shell{
+  background:rgba(255,255,255,.86);
+  border:1px solid rgba(255,255,255,.92);
+  border-radius:32px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.tracker-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  padding:26px 28px;
+  background:linear-gradient(135deg,rgba(0,51,153,.08),rgba(51,204,102,.10));
+  border-bottom:1px solid rgba(0,51,153,.08);
+}
+.tracker-head h3{font-size:1.55rem;letter-spacing:-.04em;color:var(--dark);margin-bottom:6px}
+.tracker-head p{color:var(--muted);line-height:1.45;max-width:760px}
+.tracker-badges{display:flex;gap:10px;flex-wrap:wrap}
+.tracker-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:white;border:1px solid rgba(0,51,153,.10);font-weight:900;color:var(--blue);font-size:.82rem;box-shadow:0 8px 18px rgba(17,24,39,.05)}
+.tracker-frame-wrap{padding:0;background:white}
+.tracker-frame{display:block;width:100%;height:760px;border:0;background:white}
+.tracker-note{padding:14px 22px;color:var(--muted);font-size:.86rem;background:#fff;border-top:1px solid rgba(0,51,153,.08)}
+@media(max-width:700px){.tracker-frame{height:980px}.tracker-head{padding:22px}.tracker-head h3{font-size:1.25rem}}
+
 footer{padding:28px 24px;color:var(--muted);text-align:center;font-size:.9rem}
 
 @media(max-width:920px){.hero-grid{grid-template-columns:1fr}.visual-panel{margin:0}.service-grid,.grid-2,.grid-3{grid-template-columns:1fr}}
@@ -215,6 +239,7 @@ html { scroll-behavior: smooth; }
           <p class="subtitle">Submit a request to have your design 3D printed, laser engraved, or CNC milled. Make sure your CAD file is complete and named correctly before submitting.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#service">Choose a Service</a>
+            <a class="btn btn-secondary" href="#live-tracker">View Live Tracker</a>
             <a class="btn btn-secondary" href="cad-resources.html">CAD Checklist</a>
             <a class="btn btn-secondary" href="ied-projects.html">Back to Projects</a>
           </div>
@@ -231,6 +256,7 @@ html { scroll-behavior: smooth; }
   <div class="project-nav">
     <div class="project-nav-inner">
       <a href="#service">Service</a>
+      <a href="#live-tracker">Live Tracker</a>
       <a href="#student-info">Student Info</a>
       <a href="#details">Job Details</a>
       <a href="#file">File Upload</a>
@@ -266,6 +292,43 @@ html { scroll-behavior: smooth; }
       </div>
     </div>
   </section>
+
+  <!-- Live student tracker -->
+  <section id="live-tracker">
+    <div class="section-heading">
+      <h2>Live FabLab Tracker</h2>
+      <p>Use this tracker to check which jobs are ready to be picked up and see the current status of each 3D printer.</p>
+    </div>
+
+    <div class="tracker-shell">
+      <div class="tracker-head">
+        <div>
+          <h3>Pickup Queue + Printer Status</h3>
+          <p>The tracker updates from the FabLab request system. Student-facing information is limited to job status, queue position, machine assignment, and public notes.</p>
+        </div>
+        <div class="tracker-badges">
+          <span class="tracker-badge">✓ Ready for Pickup</span>
+          <span class="tracker-badge">● Printer Status</span>
+          <span class="tracker-badge">↻ Live Queue</span>
+        </div>
+      </div>
+
+      <div class="tracker-frame-wrap">
+        <iframe
+          class="tracker-frame"
+          title="FabLab live tracker"
+          src="https://script.google.com/macros/s/AKfycbycuu9rghR-SfXLADDQSYEGs2ReTXklBDnjdgz8Px_8PMW4prGGiWhLAwg1VveGNcqC/exec?view=student"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="tracker-note">
+        If the tracker does not load, open this page in a new tab or ask your teacher to check the Apps Script deployment permissions.
+      </div>
+    </div>
+  </section>
+
 
   <!-- The form -->
   <section id="form">
