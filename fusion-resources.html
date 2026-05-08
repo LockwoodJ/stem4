@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Autodesk Fusion Tutorial Library | Lockwood STEM</title>
 
   <style>
@@ -117,14 +118,14 @@
       border: 1px solid rgba(255, 255, 255, 0.35);
     }
 
-    .info-grid {
+    .intro-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       margin: 26px 0;
     }
 
-    .info-card {
+    .intro-card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 18px;
@@ -132,13 +133,13 @@
       box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
     }
 
-    .info-card h2 {
+    .intro-card h2 {
       margin: 0 0 8px;
       color: var(--blue);
       font-size: 1.2rem;
     }
 
-    .info-card p {
+    .intro-card p {
       margin: 0;
       color: var(--muted);
     }
@@ -239,76 +240,28 @@
     }
 
     .video-content p {
-      margin: 0 0 16px;
+      margin: 0;
       color: var(--muted);
     }
 
-    .student-task {
-      background: var(--light);
-      border-left: 5px solid var(--yellow);
-      border-radius: 14px;
-      padding: 14px 16px;
-      color: #334155;
-      font-size: 0.95rem;
-    }
-
-    .checklist {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 26px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-      margin-top: 24px;
-    }
-
-    .checklist h2 {
-      color: var(--blue);
-      margin-top: 0;
-    }
-
-    .checklist-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .check-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 12px;
-    }
-
-    .box {
-      width: 20px;
-      height: 20px;
-      border: 2px solid var(--green);
-      border-radius: 5px;
-      flex: 0 0 auto;
-      margin-top: 2px;
-      background: white;
-    }
-
-    .assignment-box {
+    .resource-note {
       margin-top: 32px;
       background: linear-gradient(135deg, #ffffff, #f9fbff);
-      border: 2px solid var(--blue);
-      border-radius: 22px;
-      padding: 26px;
-      box-shadow: 0 12px 30px rgba(0, 51, 153, 0.08);
+      border: 1px solid var(--border);
+      border-left: 8px solid var(--green);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
     }
 
-    .assignment-box h2 {
-      color: var(--blue);
+    .resource-note h2 {
       margin-top: 0;
+      color: var(--blue);
     }
 
-    .assignment-box ol {
+    .resource-note p {
       margin-bottom: 0;
-      padding-left: 22px;
+      color: var(--muted);
     }
 
     .footer {
@@ -323,9 +276,8 @@
     }
 
     @media (max-width: 850px) {
-      .info-grid,
-      .video-grid,
-      .checklist-grid {
+      .intro-grid,
+      .video-grid {
         grid-template-columns: 1fr;
       }
 
@@ -344,34 +296,33 @@
   <main class="page-wrapper">
 
     <section class="hero">
-      <span class="eyebrow">Lockwood STEM Tutorial Library</span>
-      <h1>Autodesk Fusion Tutorial Page</h1>
+      <span class="eyebrow">Lockwood STEM Resource Library</span>
+      <h1>Autodesk Fusion Tutorial Library</h1>
       <p>
-        Use this page to build your Fusion skills through guided video tutorials.
-        Watch each tutorial, pause often, practice the skill in Fusion, and save evidence
-        of your work in your engineering notebook or project folder.
+        A collection of Autodesk Fusion tutorial videos for students who need support
+        with sketching, modeling, editing, and building confidence in CAD.
       </p>
 
       <div class="hero-actions">
-        <a class="button button-primary" href="#tutorials">Start Tutorials</a>
-        <a class="button button-secondary" href="#assignment">View Student Task</a>
+        <a class="button button-primary" href="#tutorials">View Tutorials</a>
+        <a class="button button-secondary" href="https://www.lockwoodstem.org/" target="_blank" rel="noopener">Back to Lockwood STEM</a>
       </div>
     </section>
 
-    <section class="info-grid">
-      <div class="info-card">
-        <h2>Goal</h2>
-        <p>Develop confidence using Autodesk Fusion for sketching, modeling, editing, and preparing designs.</p>
+    <section class="intro-grid">
+      <div class="intro-card">
+        <h2>Getting Started</h2>
+        <p>Use these videos to review the Fusion workspace, navigation tools, and basic modeling workflow.</p>
       </div>
 
-      <div class="info-card">
-        <h2>Student Workflow</h2>
-        <p>Watch, pause, practice, screenshot your progress, and reflect on what each tool does.</p>
+      <div class="intro-card">
+        <h2>Skill Support</h2>
+        <p>Return to these tutorials when you need help with a tool, technique, or modeling process.</p>
       </div>
 
-      <div class="info-card">
-        <h2>Teacher Check</h2>
-        <p>Students should be able to explain the tool used, show their model, and describe one challenge they solved.</p>
+      <div class="intro-card">
+        <h2>Independent Learning</h2>
+        <p>Pause, rewind, and follow along at your own pace while practicing inside Autodesk Fusion.</p>
       </div>
     </section>
 
@@ -396,17 +347,14 @@
         <div class="video-content">
           <div class="tag-row">
             <span class="tag green">Tutorial 1</span>
-            <span class="tag">Beginner</span>
+            <span class="tag">Fusion Basics</span>
             <span class="tag yellow">Start Here</span>
           </div>
-          <h3>Fusion Tutorial 1: Getting Started</h3>
+          <h3>Fusion Tutorial 1</h3>
           <p>
-            Use this video as your starting point for learning the Fusion workspace,
-            basic navigation, and the first steps of creating a digital model.
+            A starting tutorial for reviewing the Fusion workspace, basic navigation,
+            and the beginning steps of creating a digital model.
           </p>
-          <div class="student-task">
-            <strong>Student Task:</strong> Open Fusion, follow along with the video, and take one screenshot showing your progress.
-          </div>
         </div>
       </article>
 
@@ -424,17 +372,14 @@
         <div class="video-content">
           <div class="tag-row">
             <span class="tag green">Tutorial 2</span>
-            <span class="tag">Beginner</span>
-            <span class="tag yellow">Practice</span>
+            <span class="tag">Modeling Practice</span>
+            <span class="tag yellow">Beginner</span>
           </div>
-          <h3>Fusion Tutorial 2: Core Modeling Practice</h3>
+          <h3>Fusion Tutorial 2</h3>
           <p>
-            Continue developing your Fusion skills by practicing the basic modeling process
-            and learning how design features build on one another.
+            A practice tutorial focused on building comfort with common modeling tools
+            and the general CAD design process.
           </p>
-          <div class="student-task">
-            <strong>Student Task:</strong> Recreate the demonstrated model and label at least two tools you used in your notebook.
-          </div>
         </div>
       </article>
 
@@ -453,16 +398,13 @@
           <div class="tag-row">
             <span class="tag green">Tutorial 3</span>
             <span class="tag">Skill Builder</span>
-            <span class="tag yellow">Checkpoint</span>
+            <span class="tag yellow">CAD Practice</span>
           </div>
-          <h3>Fusion Tutorial 3: Design Skill Builder</h3>
+          <h3>Fusion Tutorial 3</h3>
           <p>
-            Build stronger modeling habits by following a more structured design workflow.
-            Focus on accuracy, clean sketches, and intentional feature choices.
+            A skill-building tutorial for strengthening modeling habits, working with
+            sketches, and creating more accurate 3D forms.
           </p>
-          <div class="student-task">
-            <strong>Student Task:</strong> Complete the tutorial model and write one sentence explaining how your sketch controls the final 3D shape.
-          </div>
         </div>
       </article>
 
@@ -480,75 +422,26 @@
         <div class="video-content">
           <div class="tag-row">
             <span class="tag green">Tutorial 4</span>
-            <span class="tag">Applied Practice</span>
-            <span class="tag yellow">Independent</span>
+            <span class="tag">Applied Modeling</span>
+            <span class="tag yellow">Independent Practice</span>
           </div>
-          <h3>Fusion Tutorial 4: Applied Modeling Challenge</h3>
+          <h3>Fusion Tutorial 4</h3>
           <p>
-            Use this tutorial to practice applying Fusion tools with more independence.
-            Focus on precision, organization, and troubleshooting your model as you work.
+            An applied modeling tutorial for practicing Fusion tools with more independence
+            and improving problem-solving within a CAD workflow.
           </p>
-          <div class="student-task">
-            <strong>Student Task:</strong> Follow the tutorial, then modify one feature of the model to make it your own.
-          </div>
         </div>
       </article>
 
     </section>
 
-    <section class="checklist">
-      <h2>Fusion Tutorial Completion Checklist</h2>
+    <section class="resource-note">
+      <h2>Using This Resource</h2>
       <p>
-        Students should complete the following items as they work through the tutorial library.
+        This page is intended as a support library for students learning Autodesk Fusion.
+        Students may use these tutorials when they need help getting started, reviewing a tool,
+        or practicing a specific CAD workflow.
       </p>
-
-      <div class="checklist-grid">
-        <div class="check-item">
-          <div class="box"></div>
-          <div>Watch each tutorial video and follow along in Autodesk Fusion.</div>
-        </div>
-
-        <div class="check-item">
-          <div class="box"></div>
-          <div>Save each Fusion file using a clear file name.</div>
-        </div>
-
-        <div class="check-item">
-          <div class="box"></div>
-          <div>Take screenshots showing progress or completed models.</div>
-        </div>
-
-        <div class="check-item">
-          <div class="box"></div>
-          <div>Identify at least three Fusion tools used during the tutorials.</div>
-        </div>
-
-        <div class="check-item">
-          <div class="box"></div>
-          <div>Explain one mistake or challenge and how it was fixed.</div>
-        </div>
-
-        <div class="check-item">
-          <div class="box"></div>
-          <div>Submit evidence of work in the assigned location.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="assignment-box" id="assignment">
-      <h2>Student Assignment</h2>
-      <p>
-        Complete the Fusion tutorial sequence and submit a short evidence document or engineering notebook entry.
-      </p>
-
-      <ol>
-        <li>Complete all four tutorial videos.</li>
-        <li>Include at least four screenshots, one from each tutorial.</li>
-        <li>List at least three Fusion tools you used.</li>
-        <li>Explain which tool was easiest to use and which tool was most challenging.</li>
-        <li>Choose one tutorial model and make a small design modification of your own.</li>
-        <li>Submit your screenshots, reflection, and modified design evidence.</li>
-      </ol>
     </section>
 
     <section class="footer">
