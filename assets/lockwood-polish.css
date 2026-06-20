@@ -191,3 +191,217 @@ body.ls-visual-upgrade .primary-btn:hover{
   body.ls-visual-upgrade *,body.ls-visual-upgrade *::before,body.ls-visual-upgrade *::after{transition:none !important;animation:none !important;scroll-behavior:auto !important}
   body.ls-visual-upgrade .ls-card:hover,body.ls-visual-upgrade .card:hover,body.ls-visual-upgrade .project-card:hover,body.ls-visual-upgrade .resource-card:hover,body.ls-visual-upgrade .unit-card:hover,body.ls-visual-upgrade .course-card:hover,body.ls-visual-upgrade .tool-card:hover,body.ls-visual-upgrade .challenge-card:hover,body.ls-visual-upgrade .ls-project-item:hover,body.ls-visual-upgrade .ls-level-card:hover{transform:none}
 }
+
+/* Lockwood STEM Accessibility Contrast Pass - WCAG AA text contrast support */
+:root{
+  --ls-muted:#4b5563;
+  --muted:#4b5563;
+  --text:#1f2937;
+  --dark:#101827;
+  --green:#15803d;
+  --course-accessible-link:#003399;
+}
+
+body,
+.ls-page-shell,
+.card,
+.panel,
+.timeline-item,
+.resource-item,
+.resource-home-card,
+.unit-home-card,
+.unit-roadmap-card,
+.project-card-full,
+.path-card,
+.course-card,
+.fablab-card,
+.ls-card,
+.ls-section{
+  color:#1f2937;
+}
+
+p,
+li,
+.card p,
+.panel p,
+.path-card p,
+.project-card-full p,
+.project-meta div,
+.resource-item p,
+.resource-home-card p,
+.unit-home-card p,
+.unit-roadmap-card p,
+.ls-card p,
+.ls-section p,
+.subtitle,
+footer,
+.ls-global-footer{
+  color:#4b5563;
+}
+
+h1,h2,h3,h4,h5,h6,
+.card h3,
+.panel h3,
+.path-card h3,
+.project-card-full h3,
+.resource-item h3,
+.resource-home-card h3,
+.unit-home-card h3,
+.unit-roadmap-card h3,
+.ls-card h3{
+  color:#101827;
+}
+
+.hero-shell h1,
+.ls-page-hero h1,
+.course-hero h1,
+.ls-hero h1,
+.hero h1{ color:#101827; }
+
+.ls-page-hero,
+.ls-page-hero h1,
+.ls-page-hero h2,
+.ls-page-hero h3,
+.ls-page-hero p,
+.callout-inner,
+.callout-inner h1,
+.callout-inner h2,
+.callout-inner h3,
+.callout-inner p,
+body.ls-visual-upgrade .ls-page-hero,
+body.ls-visual-upgrade .course-hero,
+body.ls-visual-upgrade .ls-hero{
+  color:#ffffff !important;
+}
+
+.callout-inner p,
+.ls-page-hero p,
+.ls-page-eyebrow,
+.ls-meta strong{ color:#f8fafc !important; }
+
+.btn-primary,
+.path-link,
+.course-link-btn,
+.resource-page-link,
+.primary-btn,
+.ls-global-links a.ls-global-cta[href="fabrication.html"]{
+  color:#ffffff !important;
+  background:linear-gradient(135deg,#003399,#0054c8) !important;
+}
+
+.btn-secondary,
+.course-link-btn.secondary,
+.mini-link,
+.ls-course-jump a,
+.unit-nav a{
+  color:#003399 !important;
+  background:#ffffff !important;
+  border:1px solid rgba(0,51,153,.28) !important;
+}
+
+.btn-secondary:hover,
+.course-link-btn.secondary:hover,
+.mini-link:hover,
+.ls-course-jump a:hover,
+.unit-nav a:hover{
+  color:#ffffff !important;
+  background:#003399 !important;
+}
+
+.submit-link,
+.ls-global-links .ls-global-cta,
+.path-card:nth-child(2) .path-icon,
+.path-card:nth-child(3) .path-icon,
+a[style*="background:var(--green)"]{
+  color:#07111f !important;
+}
+
+.card-tag,
+.resource-type,
+.resource-badge,
+.ls-page-eyebrow,
+.eyebrow{
+  color:#4a3400 !important;
+  background:#fff3bf !important;
+  border-color:#d6a700 !important;
+}
+
+.ls-page-hero .ls-page-eyebrow,
+body.ls-visual-upgrade .ls-page-hero .ls-page-eyebrow{
+  color:#ffffff !important;
+  background:rgba(255,255,255,.18) !important;
+  border-color:rgba(255,255,255,.55) !important;
+}
+
+.num,
+.unit-number,
+.unit-home-number,
+.resource-home-icon,
+.path-icon{
+  color:#ffffff !important;
+  background:linear-gradient(135deg,#003399,#0054c8) !important;
+}
+
+.ls-global-links a,
+.nav-links a,
+a:not(.btn):not(.path-link):not(.course-link-btn):not(.resource-page-link):not(.ls-global-cta):not(.submit-link){
+  text-decoration-thickness:2px;
+  text-underline-offset:3px;
+}
+
+.ls-global-links a:focus-visible,
+.nav-links a:focus-visible,
+.btn:focus-visible,
+.path-link:focus-visible,
+.course-link-btn:focus-visible,
+.resource-page-link:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:3px solid #ffcc00 !important;
+  outline-offset:3px !important;
+}
+
+.clean-table th,
+.ls-table th{
+  background:#003399 !important;
+  color:#ffffff !important;
+}
+.clean-table td,
+.ls-table td{ color:#1f2937 !important; background:#ffffff; }
+.clean-table tr:nth-child(even) td,
+.ls-table tr:nth-child(even) td{ background:#f8fafc; }
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{scroll-behavior:auto !important; transition:none !important; animation:none !important;}
+}
+
+/* Preserve high-contrast light-green CTA/icon treatment where dark text is used. */
+.submit-link,
+.path-card:nth-child(2) .path-icon,
+a[style*="background:var(--green)"]{
+  background:#33cc66 !important;
+  color:#07111f !important;
+}
+
+/* Hero sections that place text directly on a dark hero background. */
+.hero > h1,
+.hero > h2,
+.hero > h3,
+.hero > p,
+.hero > .subtitle,
+.hero .floating-logo + h1{
+  color:#ffffff !important;
+}
+.hero-shell h1,
+.hero-shell h2,
+.hero-shell h3,
+.hero-shell p,
+.visual-panel h2,
+.visual-panel p{
+  color:revert;
+}
+.hero-shell h1{ color:#101827 !important; }
+.hero-shell p,.hero-shell .subtitle,.visual-panel p{ color:#4b5563 !important; }
+.visual-panel h2{ color:#003399 !important; }
