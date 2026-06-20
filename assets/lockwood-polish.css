@@ -405,3 +405,93 @@ a[style*="background:var(--green)"]{
 .hero-shell h1{ color:#101827 !important; }
 .hero-shell p,.hero-shell .subtitle,.visual-panel p{ color:#4b5563 !important; }
 .visual-panel h2{ color:#003399 !important; }
+
+
+/* Accessibility audit pass - high-contrast navigation, buttons, and responsive menus */
+:root{
+  --a11y-blue:#003399;
+  --a11y-blue-dark:#001d66;
+  --a11y-green:#15803d;
+  --a11y-yellow:#ffcc00;
+  --a11y-text:#101827;
+  --a11y-muted:#374151;
+  --a11y-border:#94a3b8;
+}
+
+/* Never hide primary navigation on small screens; wrap it instead. */
+@media(max-width:680px){
+  .nav{border-radius:24px;align-items:flex-start;flex-direction:column;gap:12px;}
+  .nav-links{display:flex !important;flex-wrap:wrap;align-items:center;justify-content:flex-start;width:100%;gap:8px;}
+  .nav-links a{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:#ffffff;border:1px solid rgba(0,51,153,.28);color:var(--a11y-blue) !important;}
+  .ls-global-links{display:flex !important;flex-wrap:wrap;justify-content:flex-start;width:100%;}
+  .ls-global-links a{min-height:44px;display:inline-flex;align-items:center;justify-content:center;background:#ffffff;border:1px solid rgba(0,51,153,.22);color:var(--a11y-blue) !important;}
+}
+
+/* WCAG-friendly default text on light surfaces. */
+body,
+.card,.panel,.timeline-item,.resource-item,.resource-home-card,.unit-home-card,.unit-roadmap-card,
+.project-card-full,.path-card,.course-card,.fablab-card,.ls-card,.ls-section,
+table,td{color:var(--a11y-text) !important;}
+p,li,dd,figcaption,.subtitle,.muted,footer,.ls-global-footer,
+.card p,.panel p,.path-card p,.project-card-full p,.project-meta div,.resource-item p,.resource-home-card p,
+.unit-home-card p,.unit-roadmap-card p,.ls-card p,.ls-section p{color:var(--a11y-muted) !important;}
+
+/* Text placed on dark hero/callout backgrounds must remain white. */
+.ls-page-hero,.ls-page-hero *,
+.course-hero,.course-hero *,
+.ls-hero,.ls-hero *,
+.callout-inner,.callout-inner *,
+body.ls-visual-upgrade .ls-page-hero, body.ls-visual-upgrade .ls-page-hero *,
+body.ls-visual-upgrade .course-hero, body.ls-visual-upgrade .course-hero *,
+body.ls-visual-upgrade .ls-hero, body.ls-visual-upgrade .ls-hero *{
+  color:#ffffff !important;
+}
+.hero-shell,.hero-shell *, .visual-panel,.visual-panel *{color:revert !important;}
+.hero-shell h1,.hero-shell h2,.hero-shell h3{color:var(--a11y-text) !important;}
+.hero-shell p,.hero-shell .subtitle,.visual-panel p{color:var(--a11y-muted) !important;}
+.visual-panel h2{color:var(--a11y-blue) !important;}
+
+/* Links/buttons: visible boundaries, contrast, and touch target size. */
+a{ text-underline-offset:3px; }
+.btn,.btn-primary,.btn-secondary,.path-link,.course-link-btn,.resource-page-link,.primary-btn,.mini-link,
+button,input[type="submit"],input[type="button"]{
+  min-height:44px;
+  border:2px solid transparent;
+}
+.btn-primary,.path-link,.course-link-btn,.resource-page-link,.primary-btn,
+.ls-global-links .ls-global-cta{
+  color:#ffffff !important;
+  background:linear-gradient(135deg,var(--a11y-blue),var(--a11y-blue-dark)) !important;
+  border-color:var(--a11y-blue-dark) !important;
+}
+.btn-secondary,.course-link-btn.secondary,.mini-link,.ls-course-jump a,.unit-nav a{
+  color:var(--a11y-blue) !important;
+  background:#ffffff !important;
+  border-color:rgba(0,51,153,.38) !important;
+}
+.btn-secondary:hover,.course-link-btn.secondary:hover,.mini-link:hover,.ls-course-jump a:hover,.unit-nav a:hover,
+.nav-links a:hover,.ls-global-links a:hover{
+  color:#ffffff !important;
+  background:var(--a11y-blue) !important;
+  border-color:var(--a11y-blue-dark) !important;
+}
+
+/* Yellow tags need dark text; blue table headers need white text. */
+.card-tag,.resource-type,.resource-badge,.eyebrow{color:#3b2a00 !important;background:#fff3bf !important;border-color:#b88a00 !important;}
+.ls-page-hero .ls-page-eyebrow,.course-hero .eyebrow,.ls-hero .eyebrow{color:#ffffff !important;background:rgba(255,255,255,.18) !important;border-color:rgba(255,255,255,.65) !important;}
+th,.clean-table th,.ls-table th{background:var(--a11y-blue) !important;color:#ffffff !important;}
+.clean-table td,.ls-table td{background:#ffffff !important;color:var(--a11y-text) !important;}
+.clean-table tr:nth-child(even) td,.ls-table tr:nth-child(even) td{background:#f8fafc !important;}
+
+/* Keyboard visibility. */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,
+[tabindex]:focus-visible{
+  outline:4px solid var(--a11y-yellow) !important;
+  outline-offset:3px !important;
+  box-shadow:0 0 0 7px rgba(0,51,153,.22) !important;
+}
+
+/* Respect reduced motion and avoid hover-only accessibility. */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{scroll-behavior:auto !important;transition:none !important;animation:none !important;}
+}

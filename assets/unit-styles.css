@@ -99,7 +99,7 @@ section{max-width:1180px;margin:0 auto;padding:42px 24px}
 .callout-inner p{color:rgba(255,255,255,.82);margin-top:8px}
 footer{padding:28px 24px;color:var(--muted);text-align:center;font-size:.9rem}
 @media(max-width:920px){.hero-grid,.grid-3,.grid-2,.callout-inner{grid-template-columns:1fr}.visual-panel{margin:0}.timeline-item{grid-template-columns:1fr}}
-@media(max-width:680px){header{padding:14px}.nav{border-radius:24px}.nav-links{display:none}.hero{padding:28px 18px}.hero-shell{border-radius:30px;padding:28px 20px}.visual-panel{border-radius:30px;padding:28px 20px}.brand img{height:44px}}
+@media(max-width:680px){header{padding:14px}.nav{border-radius:24px}.nav-links{display:flex;flex-wrap:wrap}.hero{padding:28px 18px}.hero-shell{border-radius:30px;padding:28px 20px}.visual-panel{border-radius:30px;padding:28px 20px}.brand img{height:44px}}
 
 /* Added resource and units home components */
 .resource-card-link,
