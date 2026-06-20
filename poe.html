@@ -8,8 +8,13 @@
 <style id="lockwood-anchor-fix">
 html { scroll-behavior: smooth; }
 [id] { scroll-margin-top: 110px; }
+.table-wrap { overflow-x:auto; }
+.clean-table { width:100%; border-collapse:collapse; }
+.clean-table th, .clean-table td { padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.14); vertical-align:top; }
+.clean-table th { text-align:left; }
+.badge-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+.badge-row span { border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:8px 12px; background:rgba(255,255,255,.06); }
 </style>
-
 <link rel="stylesheet" href="assets/lockwood-polish.css">
 </head>
 <body class="ls-visual-upgrade ls-theme-poe">
@@ -33,50 +38,30 @@ html { scroll-behavior: smooth; }
   </nav>
 </header>
 <main>
+<section class="hero">
+  <div class="hero-shell"><div class="hero-grid"><div>
+    <div class="eyebrow"><span class="spark"></span> Principles of Engineering</div>
+    <h1>Principles of <span>Engineering</span></h1>
+    <p class="subtitle">Aerospace-focused POE connects mechanisms, energy, structures, electronics, controls, and systems thinking to aircraft, spacecraft, drones, and mission design.</p>
+    <div class="actions"><a class="btn btn-primary" href="poe-units.html">View Units</a><a class="btn btn-secondary" href="agenda.html">Daily Agenda</a><a class="btn btn-secondary" href="fabrication.html">Fabrication Request</a></div>
+  </div><div class="visual-panel">
+    <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
+    <h2>Aerospace Engineering Focus</h2>
+    <p>Every unit connects engineering principles to aircraft, spacecraft, drones, launch systems, avionics, structures, and mission-ready design.</p>
+  </div></div></div>
+</section>
 <div class="ls-course-jump"><strong>POE Quick Links:</strong><a href="poe-syllabus.html">Syllabus</a><a href="poe-units.html">Units</a><a href="poe-projects.html">Projects</a><a href="poe-resources.html">Resources</a><a href="fabrication.html">Fabrication Request</a></div>
-
-  <section class="hero">
-    <div class="hero-shell">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow"><span class="spark"></span> Principles of Engineering</div>
-          <h1>POE <span>Home</span></h1>
-          <p class="subtitle">Explore engineering systems, mechanisms, energy, structures, electronics, and applied design challenges.</p>
-          <div class="actions">
-            <a class="btn btn-secondary" href="agenda.html">Daily Agenda</a>
-            <a class="btn btn-secondary" href="fabrication.html">Fabrication Request</a>
-          </div>
-        </div>
-        <div class="visual-panel">
-          <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
-          <h2>Systems Thinking</h2>
-          <p>Use this course hub to access projects, resources, and fabrication workflows.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-heading">
-      <h2>Course Launchpad</h2>
-      <p>Start with the area you need: projects for deliverables, or resources for support.</p>
-    </div>
-    <div class="course-path-grid">
-      <a class="path-card" href="poe-projects.html">
-        <div class="path-icon">PR</div>
-        <h3>Projects</h3>
-        <p>Open major design challenges, project expectations, deliverables, rubrics, and fabrication connections.</p>
-        <span class="path-link">View Projects →</span>
-      </a>
-      <a class="path-card" href="poe-resources.html">
-        <div class="path-icon">RS</div>
-        <h3>Resources</h3>
-        <p>Find templates, checklists, technical references, notebook supports, and fabrication preparation tools.</p>
-        <span class="path-link">View Resources →</span>
-      </a>
-    </div>
-  </section>
-
+<section><div class="section-heading"><h2>Course Launchpad</h2><p>Use this course hub to access aerospace-based units, design challenges, documentation supports, and fabrication workflows.</p></div>
+<div class="course-path-grid">
+<a class="path-card" href="poe-units.html"><div class="path-icon">UN</div><h3>Units</h3><p>Open the aerospace unit roadmap, learning targets, project connections, and daily evidence expectations.</p><span class="path-link">View Units →</span></a>
+<a class="path-card" href="poe-projects.html"><div class="path-icon">PR</div><h3>Projects</h3><p>Explore aerospace design challenges that connect technical content, testing, iteration, and engineering documentation.</p><span class="path-link">View Projects →</span></a>
+<a class="path-card" href="poe-resources.html"><div class="path-icon">RS</div><h3>Resources</h3><p>Find notebook supports, aerospace system analysis guides, testing tables, CAD/fabrication checklists, and project templates.</p><span class="path-link">View Resources →</span></a>
+</div></section>
+<section><div class="section-heading"><h2>Aerospace Throughline</h2><p>POE uses aerospace examples so each technical idea has a real engineering context.</p></div><div class="grid-3">
+<article class="card"><span class="card-tag">Systems</span><h3>Mission-Level Thinking</h3><p>Students study how aerospace systems combine structures, propulsion, sensors, controls, power, materials, and human needs.</p></article>
+<article class="card"><span class="card-tag">Testing</span><h3>Evidence Over Guessing</h3><p>Design decisions must be supported with measurements, calculations, test data, prototypes, and documented revisions.</p></article>
+<article class="card"><span class="card-tag">FabLab</span><h3>Prototype Like Engineers</h3><p>Students use CAD, 3D printing, laser cutting, electronics, hand tools, and testing fixtures to build and improve solutions.</p></article>
+</div></section>
 </main>
 <footer>© 2026 Lockwood STEM</footer>
 <footer class="ls-global-footer">

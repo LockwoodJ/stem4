@@ -8,8 +8,13 @@
 <style id="lockwood-anchor-fix">
 html { scroll-behavior: smooth; }
 [id] { scroll-margin-top: 110px; }
+.table-wrap { overflow-x:auto; }
+.clean-table { width:100%; border-collapse:collapse; }
+.clean-table th, .clean-table td { padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.14); vertical-align:top; }
+.clean-table th { text-align:left; }
+.badge-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+.badge-row span { border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:8px 12px; background:rgba(255,255,255,.06); }
 </style>
-
 <link rel="stylesheet" href="assets/lockwood-polish.css">
 </head>
 <body class="ls-visual-upgrade ls-theme-poe">
@@ -33,61 +38,25 @@ html { scroll-behavior: smooth; }
   </nav>
 </header>
 <main>
-
-  <section class="hero">
-    <div class="hero-shell">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow"><span class="spark"></span> Principles of Engineering</div>
-          <h1>Unit 2: <span>Mechanisms and Motion</span></h1>
-          <p class="subtitle">Simple machines, mechanisms, gear ratios, motion transfer, mechanical advantage, and prototype testing.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="poe-unit-2-resources.html">Unit Resources</a>
-            <a class="btn btn-secondary" href="agenda.html">Daily Agenda</a>
-            <a class="btn btn-secondary" href="fabrication.html">Fabrication Request</a>
-          </div>
-        </div>
-        <div class="visual-panel">
-          <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
-          <h2>Unit Learning</h2>
-          <p>Focus on skills, evidence, technical accuracy, and engineering decisions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-heading">
-      <h2>Learning Targets</h2>
-      <p>By the end of this unit, students should be able to explain the concepts, apply the tools, and document their engineering process.</p>
-    </div>
-    <div class="grid-3">
-      <article class="card"><span class="card-tag">Understand</span><h3>Core Concepts</h3><p>Explain the unit vocabulary, systems, relationships, and engineering decisions in context.</p></article>
-      <article class="card"><span class="card-tag">Apply</span><h3>Technical Skills</h3><p>Use appropriate tools, calculations, models, tests, or fabrication workflows to solve problems.</p></article>
-      <article class="card"><span class="card-tag">Document</span><h3>Engineering Evidence</h3><p>Record sketches, data, screenshots, photos, failures, revisions, and conclusions in the notebook.</p></article>
-    </div>
-  </section>
-  <section>
-    <div class="grid-2">
-      <div class="panel">
-        <h3>Student Deliverables</h3>
-        <ul>
-          <li>Engineering notebook entries with dates, evidence, and reflections.</li>
-          <li>Technical work showing calculations, models, sketches, or CAD as needed.</li>
-          <li>Prototype, test, analysis, or design decision evidence.</li>
-          <li>Final reflection explaining what changed and why.</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>Project Connection</h3>
-        <p>This unit supports the course project work by building the technical skills students need to design, test, document, and improve engineered solutions.</p>
-        <div class="actions" style="margin-top:18px;">
-          <a class="btn btn-primary" href="poe-unit-2-resources.html">Open Resources</a>
-          <a class="btn btn-secondary" href="poe-units.html">All Units</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="hero">
+  <div class="hero-shell"><div class="hero-grid"><div>
+    <div class="eyebrow"><span class="spark"></span> Principles of Engineering</div>
+    <h1>Unit 2: <span>Mechanisms, Motion, and Flight Control</span></h1>
+    <p class="subtitle">Apply mechanical advantage, linkages, gears, cams, pulleys, and motion transfer to aerospace mechanisms such as control surfaces, landing gear, hatches, and deployment systems.</p>
+    <div class="actions"><a class="btn btn-primary" href="poe-unit-2-resources.html">Unit Resources</a><a class="btn btn-secondary" href="agenda.html">Daily Agenda</a><a class="btn btn-secondary" href="fabrication.html">Fabrication Request</a><a class="btn btn-secondary" href="poe-units.html">All Units</a></div>
+  </div><div class="visual-panel">
+    <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
+    <h2>Aerospace Engineering Focus</h2>
+    <p>Every unit connects engineering principles to aircraft, spacecraft, drones, launch systems, avionics, structures, and mission-ready design.</p>
+  </div></div></div>
+</section>
+<section><div class="section-heading"><h2>Unit Focus</h2><p><strong>Flight Surfaces and Deployable Systems</strong> — Students use aerospace applications to make the engineering principles concrete, testable, and connected to real design decisions.</p></div><div class="grid-3">
+<article class="card"><span class="card-tag">Understand</span><h3>Aerospace Concepts</h3><ul><li>Mechanical advantage and motion transfer</li><li>Linkages, gears, cams, pulleys, and levers</li><li>Rotary to linear motion</li><li>Tolerances, alignment, and friction</li><li>Aerospace mechanisms and moving assemblies</li></ul></article>
+<article class="card"><span class="card-tag">Apply</span><h3>Technical Skills</h3><ul><li>Model a motion path</li><li>Calculate ratios or mechanical advantage</li><li>Prototype a linkage or deployable mechanism</li><li>Measure range of motion and repeatability</li><li>Revise based on test data</li></ul></article>
+<article class="card"><span class="card-tag">Document</span><h3>Engineering Evidence</h3><ul><li>Mechanism sketches</li><li>CAD or physical prototype</li><li>Motion test table</li><li>Failure and adjustment log</li><li>Final mechanism explanation</li></ul></article>
+</div></section>
+<section><div class="grid-2"><div class="panel"><h3>Student Deliverables</h3><ul><li>Dated engineering notebook entries with sketches, data, screenshots, photos, calculations, and reflections.</li><li>Technical work showing aerospace context, design decisions, and evidence-based revision.</li><li>Prototype, model, diagram, test result, or analysis artifact connected to the unit focus.</li><li>Final reflection explaining what changed, why it changed, and how the evidence supports the decision.</li></ul></div><div class="panel"><h3>Project Connection</h3><p>This unit connects to the <strong>Flight Control Mechanism Challenge</strong>. Use the project page to understand the challenge, constraints, deliverables, testing expectations, and rubric.</p><div class="actions" style="margin-top:18px;"><a class="btn btn-primary" href="poe-project-2.html">Open Project</a><a class="btn btn-secondary" href="poe-unit-2-resources.html">Open Resources</a></div></div></div></section>
+<section><div class="section-heading"><h2>Aerospace Examples</h2><p>Use these examples to connect the unit content to real engineering systems.</p></div><div class="badge-row"><span>Aircraft</span><span>Spacecraft</span><span>Drones/UAS</span><span>Launch systems</span><span>Avionics</span><span>Mission equipment</span><span>Ground support systems</span><span>Human factors</span></div></section>
 
 </main>
 <footer>© 2026 Lockwood STEM</footer>

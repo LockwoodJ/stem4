@@ -8,8 +8,13 @@
 <style id="lockwood-anchor-fix">
 html { scroll-behavior: smooth; }
 [id] { scroll-margin-top: 110px; }
+.table-wrap { overflow-x:auto; }
+.clean-table { width:100%; border-collapse:collapse; }
+.clean-table th, .clean-table td { padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.14); vertical-align:top; }
+.clean-table th { text-align:left; }
+.badge-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+.badge-row span { border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:8px 12px; background:rgba(255,255,255,.06); }
 </style>
-
 <link rel="stylesheet" href="assets/lockwood-polish.css">
 </head>
 <body class="ls-visual-upgrade ls-theme-poe">
@@ -33,53 +38,24 @@ html { scroll-behavior: smooth; }
   </nav>
 </header>
 <main>
-
-  <section class="hero">
-    <div class="hero-shell">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow"><span class="spark"></span> Principles of Engineering</div>
-          <h1>POE <span>Resources</span></h1>
-          <p class="subtitle">Find templates, checklists, unit supports, and technical references to help you complete stronger engineering work.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="poe.html">Course Home</a>
-            <a class="btn btn-secondary" href="agenda.html">Daily Agenda</a>
-            <a class="btn btn-secondary" href="fabrication.html">Fabrication Request</a>
-          </div>
-        </div>
-        <div class="visual-panel">
-          <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
-          <h2>Resource Hub</h2>
-          <p>Use resources before submitting files, asking for review, or finalizing documentation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="section-heading">
-      <h2>Core Course Resources</h2>
-      <p>These resources support project documentation, technical work, and fabrication readiness.</p>
-    </div>
-    <div class="resource-list">
-      <article class="resource-item">
-        <div class="resource-item-top"><h3>Engineering Notebook Expectations</h3><span class="resource-type">Notebook</span></div>
-        <p>Use dated entries, labeled sketches, test evidence, calculations, screenshots, and revisions to show engineering thinking.</p>
-      </article>
-<article class="resource-item">
-        <div class="resource-item-top"><h3>Systems Diagram Checklist</h3><span class="resource-type">Systems</span></div>
-        <p>Identify inputs, outputs, processes, constraints, failure modes, and feedback loops.</p>
-      </article>
-<article class="resource-item">
-        <div class="resource-item-top"><h3>Testing and Data Table Template</h3><span class="resource-type">Analysis</span></div>
-        <p>Organize trials, variables, measurements, observations, and conclusions clearly.</p>
-      </article>
-<article class="resource-item">
-        <div class="resource-item-top"><h3>Fabrication Request Prep</h3><span class="resource-type">FabLab</span></div>
-        <p>Check file sharing, dimensions, process choice, and project requirements before submitting.</p>
-      </article>
-    </div>
-  </section>
-
+<section class="hero">
+  <div class="hero-shell"><div class="hero-grid"><div>
+    <div class="eyebrow"><span class="spark"></span> Principles of Engineering</div>
+    <h1>POE <span>Resources</span></h1>
+    <p class="subtitle">Aerospace-aligned templates, checklists, technical references, and documentation supports for stronger engineering work.</p>
+    <div class="actions"><a class="btn btn-primary" href="poe.html">Course Home</a><a class="btn btn-secondary" href="agenda.html">Daily Agenda</a><a class="btn btn-secondary" href="fabrication.html">Fabrication Request</a></div>
+  </div><div class="visual-panel">
+    <img src="assets/lockwood-stem-logo.png" alt="Lockwood STEM logo" />
+    <h2>Aerospace Engineering Focus</h2>
+    <p>Every unit connects engineering principles to aircraft, spacecraft, drones, launch systems, avionics, structures, and mission-ready design.</p>
+  </div></div></div>
+</section><section><div class="section-heading"><h2>Core Course Resources</h2><p>These resources support aerospace project documentation, technical analysis, fabrication preparation, and testing.</p></div><div class="resource-list"><article class="resource-item"><div class="resource-item-top"><h3>Aerospace Engineering Notebook Expectations</h3><span class="resource-type">Notebook</span></div><p>Use dated entries, labeled sketches, calculations, CAD screenshots, circuit/code evidence, test data, photos, revisions, and reflections.</p></article>
+<article class="resource-item"><div class="resource-item-top"><h3>Aircraft/Spacecraft System Diagram Checklist</h3><span class="resource-type">Systems</span></div><p>Identify inputs, outputs, processes, constraints, feedback loops, interfaces, failure modes, and mission requirements.</p></article>
+<article class="resource-item"><div class="resource-item-top"><h3>Aerospace Testing and Data Table Template</h3><span class="resource-type">Analysis</span></div><p>Organize trials, variables, measurements, observations, failures, revisions, and conclusions clearly.</p></article>
+<article class="resource-item"><div class="resource-item-top"><h3>Mechanism and Motion Test Guide</h3><span class="resource-type">Mechanisms</span></div><p>Measure travel, angle, mechanical advantage, repeatability, binding, friction, and range of motion.</p></article>
+<article class="resource-item"><div class="resource-item-top"><h3>Energy and Structures Performance Guide</h3><span class="resource-type">Structures</span></div><p>Track work, power, efficiency, mass, load, deflection, failure mode, and strength-to-weight ratio.</p></article>
+<article class="resource-item"><div class="resource-item-top"><h3>Avionics Troubleshooting Log</h3><span class="resource-type">Controls</span></div><p>Record symptoms, suspected causes, sensor readings, code/circuit changes, test results, and fixes.</p></article>
+<article class="resource-item"><div class="resource-item-top"><h3>Fabrication Request Prep</h3><span class="resource-type">FabLab</span></div><p>Check file sharing, dimensions, process choice, materials, safety, scale, and project requirements before submitting.</p></article></div></section><section><div class="section-heading"><h2>Unit Resource Hubs</h2><p>Open the unit-specific resource page for focused project supports.</p></div><div class="course-path-grid"><a class="path-card" href="poe-unit-0-resources.html"><div class="path-icon">U0</div><h3>Unit 0 Resources</h3><p>Product Design and Development: Mission Gear Soft-Goods Challenge</p><span class="path-link">Open Resources →</span></a><a class="path-card" href="poe-unit-1-resources.html"><div class="path-icon">U1</div><h3>Unit 1 Resources</h3><p>Aerospace Systems and Engineering Design: Aircraft and Spacecraft Systems</p><span class="path-link">Open Resources →</span></a><a class="path-card" href="poe-unit-2-resources.html"><div class="path-icon">U2</div><h3>Unit 2 Resources</h3><p>Mechanisms, Motion, and Flight Control: Flight Surfaces and Deployable Systems</p><span class="path-link">Open Resources →</span></a><a class="path-card" href="poe-unit-3-resources.html"><div class="path-icon">U3</div><h3>Unit 3 Resources</h3><p>Energy, Power, and Aerospace Structures: Propulsion, Power, and Airframe Performance</p><span class="path-link">Open Resources →</span></a><a class="path-card" href="poe-unit-4-resources.html"><div class="path-icon">U4</div><h3>Unit 4 Resources</h3><p>Avionics, Control Systems, and Automation: Sensors, Feedback, and Mission Control</p><span class="path-link">Open Resources →</span></a></div></section>
 </main>
 <footer>© 2026 Lockwood STEM</footer>
 <footer class="ls-global-footer">
